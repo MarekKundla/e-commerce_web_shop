@@ -7,13 +7,39 @@ import {
     Typography,
     IconButton,
 } from '@mui/material'
-import { AddShoppingCard } from '@mui/icons-material'
+import { AddShoppingCart } from '@mui/icons-material'
 
-const Product = () => {
+import useStyles from './styles'
+
+const Product = ({ product }) => {
+    const classes = useStyles()
+
     return (
-        <div>
-            <div>Product</div>
-        </div>
+        <Card className={classes.root}>
+            <CardMedia
+                className={classes.media}
+                image=''
+                title={product.name}
+            />
+            <CardContent>
+                <div className={classes.cardContent}>
+                    <Typography variant='h5' gutterBottom>
+                        {product.name}
+                    </Typography>
+                    <Typography variant='h5' gutterBottom>
+                        {product.price}
+                    </Typography>
+                </div>
+                <Typography variant='h2' color='textSecondary'>
+                    {product.description}
+                </Typography>
+            </CardContent>
+            <CardActions disableSpacing className={classes.cardAction}>
+                <IconButton aria-label='Add to cart'>
+                    <AddShoppingCart />
+                </IconButton>
+            </CardActions>
+        </Card>
     )
 }
 
