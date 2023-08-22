@@ -10,23 +10,30 @@ import {
 import { AddShoppingCart } from '@mui/icons-material'
 
 import './styles.css'
+// TODO: Try use styles from mui
 
 const Product = ({ product }) => {
     return (
         <Card className='root'>
-            <CardMedia className='media' image='' title={product.name} />
+            <CardMedia
+                className='media'
+                image={product.image.url}
+                title={product.name}
+            />
             <CardContent>
                 <div className='cardContent'>
                     <Typography variant='h5' gutterBottom>
                         {product.name}
                     </Typography>
                     <Typography variant='h5' gutterBottom>
-                        {product.price}
+                        {product.price.formatted_with_symbol}
                     </Typography>
                 </div>
-                <Typography variant='body2' color='textSecondary'>
-                    {product.description}
-                </Typography>
+                <Typography
+                    dangerouslySetInnerHTML={{ __html: product.description }}
+                    variant='body2'
+                    color='textSecondary'
+                />
             </CardContent>
             <CardActions disableSpacing className='cardAction'>
                 <IconButton aria-label='Add to cart'>

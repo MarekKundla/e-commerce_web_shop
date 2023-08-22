@@ -8,7 +8,7 @@
     padding-top: 56.25%; /* 16:9 */
 }
 
-.cardActions {
+.cardAction {
     display: flex;
     justify-content: flex-end;
 }
