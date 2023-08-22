@@ -1,0 +1,19 @@
+.root {
+    /* maxWidth: 345, original width style*/
+    max-width: 100%;
+}
+
+.media {
+    height: 0;
+    padding-top: 56.25%; /* 16:9 */
+}
+
+.cardActions {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.cardContent {
+    display: flex;
+    justify-content: space-between;
+}

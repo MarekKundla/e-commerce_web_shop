@@ -9,15 +9,18 @@ const products = [
 ]
 
 const Products = () => {
-    <main>
-        <Grid container justify='center' spacing={4}>
-            {products.map((product) => (
-                <Grid item key={product.id} xs={12} sm={6} md={4} lg={3}>
-                    <Product product={product} />
-                </Grid>
-            ))}
-        </Grid>
-    </main>
+    return (
+        <main className='content'>
+            <div className='toolbar' />
+            <Grid container justify='center' spacing={4}>
+                {products.map((product) => (
+                    <Grid item key={product.id} xs={12} sm={6} md={4} lg={3}>
+                        <Product product={product} />
+                    </Grid>
+                ))}
+            </Grid>
+        </main>
+    )
 }
 
 export default Products
