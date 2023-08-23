@@ -12,7 +12,7 @@ import { AddShoppingCart } from '@mui/icons-material'
 import './styles.css'
 // TODO: Try use styles from mui
 
-const Product = ({ product }) => {
+const Product = ({ product, onAddToCart }) => {
     return (
         <Card className='root'>
             <CardMedia
@@ -36,7 +36,10 @@ const Product = ({ product }) => {
                 />
             </CardContent>
             <CardActions disableSpacing className='cardAction'>
-                <IconButton aria-label='Add to cart'>
+                <IconButton
+                    aria-label='Add to cart'
+                    onClick={() => onAddToCart(product.id, 1)}
+                >
                     <AddShoppingCart />
                 </IconButton>
             </CardActions>
