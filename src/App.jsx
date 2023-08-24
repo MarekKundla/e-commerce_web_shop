@@ -14,33 +14,33 @@ const App = () => {
     }
 
     const fetchCart = async () => {
-        const cart = await commerce.cart.retrieve()
+        const response = await commerce.cart.retrieve()
 
-        setCart(cart)
+        setCart(response)
     }
 
     const handleAddToCart = async (productId, quantity) => {
         const response = await commerce.cart.add(productId, quantity)
 
-        setCart(response.cart)
+        setCart(response)
     }
 
     const handleUpdateCartQty = async (productId, quantity) => {
-        const { cart } = await commerce.cart.update(productId, { quantity })
+        const response = await commerce.cart.update(productId, { quantity })
 
-        setCart(cart)
+        setCart(response)
     }
 
     const handleRemoveFromCart = async (productId) => {
-        const { cart } = await commerce.cart.remove(productId)
+        const response = await commerce.cart.remove(productId)
 
-        setCart(cart)
+        setCart(response)
     }
 
     const handleEmptyCart = async () => {
-        const { cart } = await commerce.cart.empty()
+        const response = await commerce.cart.empty()
 
-        setCart(cart)
+        setCart(response)
     }
 
     useEffect(() => {
@@ -51,8 +51,7 @@ const App = () => {
     return (
         <Router>
             <div>
-                <Navbar totalItems={cart?.total_items} />
-                {/* TODO: skontrolvať prečo je line_items undefined */}
+                <Navbar totalItems={cart.total_items} />
                 <Routes>
                     <Route
                         exact
