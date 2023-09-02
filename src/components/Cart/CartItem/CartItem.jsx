@@ -8,6 +8,8 @@ import {
     CardMedia,
 } from '@mui/material'
 
+import './styles.css'
+
 const CartItem = ({ item, handleUpdateCartQty, handleRemoveFromCart }) => {
     return (
         <Card>

@@ -3,6 +3,8 @@ import { Container, Typography, Button, Grid } from '@mui/material'
 import { Link } from 'react-router-dom'
 import CartItem from './CartItem/CartItem'
 
+import './styles.css'
+
 const Cart = ({
     cart,
     handleUpdateCartQty,
